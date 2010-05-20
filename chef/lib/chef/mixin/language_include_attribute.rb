@@ -42,15 +42,12 @@ class Chef
             cookbook = @cookbook_loader[amatch[1].to_sym]
             cookbook.load_attribute(amatch[2], node)
           else
-            cookbook = @cookbook_loader[amatch[1].to_sym]
-            cookbook.load_attribute("default", node)
+            cookbook = @cookbook_loader[attrib.to_sym]
+            cookbook.load_attribute(attrib, node)
           end
         end
         true
       end
-
     end
   end
 end
-      
-
